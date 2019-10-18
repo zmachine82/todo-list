@@ -25,7 +25,6 @@
 
   mat-card {
     padding: 0;
-    width: 33%;
 
     mat-card-title {
       padding: 5%;
@@ -75,14 +74,26 @@
 }
 
 .task {
+  width: 100%;
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
   p {
-    margin: 0 0 0 10px;
+    font-size: large;
+    margin: 0 0 0 32px;
   }
 }
 
 .completedTask {
   text-decoration: line-through;
   color: gray;
+}
+
+.buttons {
+  float: right;
+}
+
+.taskName {
+  display: flex;
+  flex-direction: row;
 }

@@ -25,11 +25,15 @@ export class AppComponent implements OnInit {
   }
 
   addNewTodo() {
-    this.list.todos.push(new Todo('New Task', true));
+    this.list.todos.push(new Todo('', true));
   }
 
   cancelTodo(todo: Todo) {
-    this.list.todos = this.list.todos.filter(t => t !== todo);
+    if (todo.task.trim().length === 0) {
+      this.deleteTodo(todo);
+    } else {
+      todo.editing = false;
+    }
   }
 
   updateCheck(todo: Todo) {
@@ -38,5 +42,9 @@ export class AppComponent implements OnInit {
       this.list.todos = this.list.todos.filter(t => t !== todo);
       this.list.todos.push(todo);
     }
+  }
+
+  deleteTodo(todo: Todo) {
+    this.list.todos = this.list.todos.filter(t => t !== todo);
   }
 }

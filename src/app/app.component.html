@@ -9,9 +9,19 @@
         <mat-list class="todos">
           <mat-list-item *ngFor="let task of list.todos">
             <div *ngIf="!task.editing" class="task">
-              <mat-checkbox (change)="updateCheck(task)"></mat-checkbox>
-              <p *ngIf="!task.completed">{{task.task}}</p>
-              <p *ngIf="task.completed"><span class="completedTask">{{task.task}}</span></p>
+              <div class="taskName">
+                <mat-checkbox (change)="updateCheck(task)"></mat-checkbox>
+                <p *ngIf="!task.completed">{{task.task}}</p>
+                <p *ngIf="task.completed"><span class="completedTask">{{task.task}}</span></p>
+              </div>
+              <div class="buttons">
+                <button mat-flat-button (click)="task.editing = !task.editing">
+                  <mat-icon>edit</mat-icon>
+                </button>
+                <button mat-flat-button (click)="deleteTodo(task)">
+                  <mat-icon color="warn">delete</mat-icon>
+                </button>
+              </div>
             </div>
             <form (submit)="saveTodo(task)" *ngIf="task.editing" class="addTaskInput">
               <mat-form-field>
