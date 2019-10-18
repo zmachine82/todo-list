@@ -1,12 +1,17 @@
-<h1 class="title">{{title}}</h1>
-
-
-<div class="list-container">
-  <mat-card>
-    <mat-card-title>{{list.name}}</mat-card-title>
+<div class="page">
+  
+  
+  <h1 class="title">{{title}}</h1>
+  
+  
+  <div class="list-container">
+    <mat-card>
+      <mat-card-title>{{list.name}}</mat-card-title>
+      <mat-divider></mat-divider>
     <mat-card-content>
       <mat-list *ngFor="let task of list.todos" class="todos">
         <mat-list-item>{{task.task}}</mat-list-item>
+        <mat-divider></mat-divider>
       </mat-list>
       <form *ngIf="adding" (submit)="addTodo()">
         <mat-form-field >
@@ -20,5 +25,6 @@
       </button>
     </mat-card-content>
   </mat-card>
- 
+  
+</div>
 </div>
