@@ -14,7 +14,7 @@
               <p *ngIf="task.completed"><span class="completedTask">{{task.task}}</span></p>
             </div>
             <form (submit)="saveTodo(task)" *ngIf="task.editing" class="addTaskInput">
-              <mat-form-field >
+              <mat-form-field>
                 <input matInput name="task" [(ngModel)]="task.task" autofocus="true">
               </mat-form-field>
               <button type="submit" mat-button class="submit" (click)="saveTodo(task)">

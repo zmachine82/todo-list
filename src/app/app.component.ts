@@ -22,11 +22,6 @@ export class AppComponent implements OnInit {
 
   saveTodo(todo: Todo) {
     todo.editing = false;
-
-    // this.list.todos.filter(t => t === todo).map(to => {
-    //   to.task = todo.task;
-    //   to.editing = false;
-    // });
   }
 
   addNewTodo() {
