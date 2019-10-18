@@ -1,0 +1,42 @@
+@import '../colors.scss';
+
+.title {
+    width: 100%;
+    text-align: center;
+    color: $main-blue;
+    font-family: fantasy;
+}
+
+.todos {
+    margin-left: 5%;
+    p {
+        color: black;
+        font-size: x-large;
+    }
+}
+
+.list-container {
+    margin: 10%;
+    mat-card {
+        mat-card-title {
+            color: $main-blue;
+        }
+        mat-card-content {
+            color: $main-blue;
+        }
+    }
+}
+
+.submit {
+    background: green;
+    color: white;
+}
+
+.cancel {
+    background: red;
+    color: white;
+}
+
+.newTodoButton {
+    margin-left: 10%;
+}
