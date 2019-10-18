@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { List } from './models/list';
-import { Todo } from './models/todo';
+import {Component, OnInit} from '@angular/core';
+import {List} from './models/list';
+import {Todo} from './models/todo';
 
 @Component({
   selector: 'app-root',
@@ -10,10 +10,9 @@ import { Todo } from './models/todo';
 export class AppComponent implements OnInit {
   title = 'Git Organized';
   list: List;
-  adding = false;
-  newTodo: Todo = new Todo('');
 
-  constructor() {}
+  constructor() {
+  }
 
   ngOnInit(): void {
     this.list = new List();
@@ -25,7 +24,7 @@ export class AppComponent implements OnInit {
     this.list.todos.filter(t => t === todo).map(to => {
       to.task = todo.task;
       to.editing = false;
-    });  
+    });
   }
 
   addNewTodo() {
@@ -35,6 +34,14 @@ export class AppComponent implements OnInit {
   cancelTodo(todo: Todo) {
     this.list.todos.filter(t => t === todo).map(to => {
       to.editing = false;
-    });  
+    });
+  }
+
+  updateCheck(todo: Todo) {
+    todo.completed = !todo.completed;
+    if (todo.completed) {
+      this.list.todos = this.list.todos.filter(t => t !== todo);
+      this.list.todos.push(todo);
+    }
   }
 }

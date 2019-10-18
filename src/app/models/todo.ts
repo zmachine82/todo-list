@@ -1,10 +1,12 @@
 export class Todo {
     task: string;
-    editing: boolean
+    editing: boolean;
+    completed: boolean;
 
     constructor(task: string, editing?: boolean) {
         this.task = task;
-        if(editing !== null) {
+        this.completed = false;
+        if (editing !== null) {
             this.editing = editing;
         } else {
             this.editing = false;

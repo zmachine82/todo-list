@@ -1,56 +1,88 @@
 @import '../colors.scss';
 
 .title {
-    width: 100%;
-    text-align: center;
-    color: $main-blue;
-    font-family: fantasy;
+  width: 100%;
+  text-align: center;
+  color: $main-blue;
+  font-family: fantasy;
+  margin: 0;
+  padding-top: 16px;
 }
 
 .todos {
-    margin-left: 5%;
-    p {
-        color: black;
-        font-size: x-large;
-    }
+  margin-left: 5%;
+
+  p {
+    color: black;
+    font-size: x-large;
+  }
 }
 
 .list-container {
-    margin: 5%;
-    justify-content: center;
-    display: flex;
-    mat-card {
-        padding: 0;
-        width: 33%;
-        mat-card-title {
-            padding: 5%;
-            color: $main-blue;
-        }
-        mat-card-content {
-            display: flex;
-            flex-direction: column;
-            color: $main-blue;
-            justify-content: center;
-            mat-list {
-                padding: 0;
-                margin: 0;
-            }
-        }
+  margin: 5%;
+  justify-content: center;
+  display: flex;
+
+  mat-card {
+    padding: 0;
+    width: 33%;
+
+    mat-card-title {
+      padding: 5%;
+      color: $main-blue;
     }
+
+    mat-card-content {
+      display: flex;
+      flex-direction: column;
+      color: $main-blue;
+      justify-content: center;
+
+      mat-list {
+        padding: 0;
+        margin: 0;
+      }
+    }
+  }
 }
 
 .submit {
-    background: green;
-    color: white;
+  background: green;
+  color: white;
 }
 
 .cancel {
-    background: red;
-    color: white;
+  background: red;
+  color: white;
 }
 
 .newTodoButton {
-    width: 100%;
-    margin: 0;
-    height: 48px;
+  width: 100%;
+  margin: 0;
+  height: 48px;
+  background: $main-blue;
+  color: white;
+}
+
+.addTaskInput {
+  width: 100%;
+  mat-form-field {
+    width: 50%;
+  }
+  button {
+    margin: 3px;
+  }
+}
+
+.task {
+  display: flex;
+  flex-direction: row;
+  p {
+    margin: 0 0 0 10px;
+  }
+}
+
+.completedTask {
+  text-decoration: line-through;
+  color: gray;
 }
