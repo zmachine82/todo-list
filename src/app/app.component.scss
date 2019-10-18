@@ -31,11 +31,9 @@
             flex-direction: column;
             color: $main-blue;
             justify-content: center;
-            form {
-                mat-form-field {
-                    width: 50%;
-                    margin-left: 5%;
-                }
+            mat-list {
+                padding: 0;
+                margin: 0;
             }
         }
     }
@@ -54,6 +52,5 @@
 .newTodoButton {
     width: 100%;
     margin: 0;
-    padding: 0;
-    height: 50px;
+    height: 48px;
 }

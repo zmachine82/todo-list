@@ -21,18 +21,20 @@ export class AppComponent implements OnInit {
     this.list.todos = [new Todo('Wow'), new Todo('Rake Leaves')];
   }
 
-  addTodo() {
-    this.list.todos.push(this.newTodo);
-    this.newTodo = new Todo('');
-    this.adding = false;
+  saveTodo(todo: Todo) {
+    this.list.todos.filter(t => t === todo).map(to => {
+      to.task = todo.task;
+      to.editing = false;
+    });  
   }
 
-  displayTodoInput() {
-    this.adding = true;
+  addNewTodo() {
+    this.list.todos.push(new Todo('New Task', true));
   }
 
-  cancelTodo() {
-    this.adding = false;
-    this.newTodo.task = '';
+  cancelTodo(todo: Todo) {
+    this.list.todos.filter(t => t === todo).map(to => {
+      to.editing = false;
+    });  
   }
 }
