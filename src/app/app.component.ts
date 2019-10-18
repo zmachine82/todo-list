@@ -21,10 +21,12 @@ export class AppComponent implements OnInit {
   }
 
   saveTodo(todo: Todo) {
-    this.list.todos.filter(t => t === todo).map(to => {
-      to.task = todo.task;
-      to.editing = false;
-    });
+    todo.editing = false;
+
+    // this.list.todos.filter(t => t === todo).map(to => {
+    //   to.task = todo.task;
+    //   to.editing = false;
+    // });
   }
 
   addNewTodo() {
@@ -32,9 +34,7 @@ export class AppComponent implements OnInit {
   }
 
   cancelTodo(todo: Todo) {
-    this.list.todos.filter(t => t === todo).map(to => {
-      to.editing = false;
-    });
+    this.list.todos = this.list.todos.filter(t => t !== todo);
   }
 
   updateCheck(todo: Todo) {
