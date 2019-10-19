@@ -44,4 +44,12 @@ export class AppComponent implements OnInit {
       this.list.todos.push(todo);
     }
   }
+
+  deleteTodo(todo: Todo) {
+    this.list.todos = this.list.todos.filter(t => t !== todo);
+  }
+
+  editTodo(todo: Todo) {
+    todo.editing = true;
+  }
 }

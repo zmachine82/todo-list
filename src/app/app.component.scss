@@ -86,3 +86,24 @@
   text-decoration: line-through;
   color: gray;
 }
+
+.editButton {
+  background: white;
+  color: lightblue;
+  :hover {
+    color: blue;
+  }
+}
+
+.deleteButton {
+  background: white;
+  color: pink;
+    :hover {
+      color: red;
+    }
+}
+
+button {
+  margin: 0;
+  padding: 10px;
+}
