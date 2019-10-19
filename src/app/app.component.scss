@@ -47,13 +47,19 @@
 }
 
 .submit {
-  background: green;
-  color: white;
+  background: white;
+  color: lightgreen;
+  :hover { 
+    color: green;
+  }
 }
 
 .cancel {
-  background: red;
-  color: white;
+  background: white;
+  color: pink;
+  :hover {
+    color: red;
+  }
 }
 
 .newTodoButton {

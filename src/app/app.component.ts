@@ -46,7 +46,9 @@ export class AppComponent implements OnInit {
   }
 
   deleteTodo(todo: Todo) {
-    this.list.todos = this.list.todos.filter(t => t !== todo);
+    if (confirm("Are you sure?")) {
+      this.list.todos = this.list.todos.filter(t => t !== todo);
+    }
   }
 
   editTodo(todo: Todo) {
