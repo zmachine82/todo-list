@@ -1,7 +1,6 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import {List} from '../models/list';
 import {BehaviorSubject, Observable, of} from 'rxjs';
-import {Todo} from '../models/todo';
 
 @Injectable({
   providedIn: 'root'
@@ -12,23 +11,39 @@ export class ListService {
   selectedList: BehaviorSubject<List> = new BehaviorSubject<List>(null);
 
   constructor() {
-    const list = new List();
-    list.name = 'YARDWORK';
-    list.todos = [new Todo('Wow'), new Todo('Rake Leaves')];
-    this.lists.push(list);
-
-    const list2 = new List();
-    list2.name = 'INSIDE STUFF';
-    list2.todos = [new Todo('Amazing'), new Todo('Cook Dinner')];
-    this.lists.push(list2);
   }
 
   getLists(): Observable<List[]> {
+    const lists = localStorage.getItem('lists');
+    console.log(lists);
+    if (lists !== null && lists !== undefined) {
+      const listObjects: List[] = JSON.parse(lists);
+      this.selectedList.next(listObjects[0]);
+      this.lists = listObjects;
+    }
     return of(this.lists);
   }
 
   getDefaultList() {
-    return this.lists[0];
+    if (this.lists.length > 0) {
+      console.log('length');
+      return this.lists[0];
+    } else {
+      console.log('null');
+      return null;
+    }
   }
 
+  addList(list: List) {
+    this.lists.push(list);
+    this.selectedList.next(list);
+    localStorage.setItem('lists', JSON.stringify(this.lists));
+  }
+
+  updateList(list: List) {
+    this.lists = this.lists.filter(l => l !== list);
+    this.lists.push(list);
+    localStorage.setItem('lists', JSON.stringify(this.lists));
+
+  }
 }

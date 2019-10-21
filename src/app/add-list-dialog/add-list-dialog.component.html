@@ -1,0 +1,11 @@
+<mat-form-field>
+  <input matInput type="text" [(ngModel)]="newList.name" placeholder="List Name">
+</mat-form-field>
+<div class="buttons">
+  <button type="submit" mat-button class="submit" (click)="saveTodo()">
+    <mat-icon>post_add</mat-icon>
+  </button>
+  <button type="cancel" mat-button class="cancel" (click)="cancelTodo()">
+    <mat-icon>cancel</mat-icon>
+  </button>
+</div>

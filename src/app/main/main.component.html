@@ -15,12 +15,12 @@
       {{list.name}}
     </mat-card-title>
     <mat-divider></mat-divider>
-    <mat-card-content>
+    <mat-card-content *ngIf="list">
       <mat-list class="todos">
         <mat-list-item *ngFor="let task of list.todos">
           <div *ngIf="!task.editing" class="task">
             <div class="taskName">
-              <mat-checkbox (change)="updateCheck(task)" color="accent"></mat-checkbox>
+              <mat-checkbox (change)="updateCheck(task)" color="accent" [checked]="task.completed"></mat-checkbox>
               <p *ngIf="!task.completed">{{task.task}}</p>
               <p *ngIf="task.completed"><span class="completedTask">{{task.task}}</span></p>
             </div>

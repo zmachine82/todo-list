@@ -3,4 +3,8 @@
   <div class="lists-container" *ngFor="let list of lists" (click)="setActiveList(list)">
     <h3 >{{list.name}}</h3>
   </div>
+  <div class="addNewList" (click)="openAddList()">
+    <mat-icon>add</mat-icon>
+    <h4>Add new list</h4>
+  </div>
 </div>

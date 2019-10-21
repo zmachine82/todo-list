@@ -1,0 +1,17 @@
+.submit {
+  background: white;
+  color: lightgreen;
+
+  :hover {
+    color: green;
+  }
+}
+
+.cancel {
+  background: white;
+  color: pink;
+
+  :hover {
+    color: red;
+  }
+}

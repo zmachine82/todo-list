@@ -40,10 +40,12 @@ export class MainComponent implements OnInit {
 
   saveTodo(todo: Todo) {
     todo.editing = false;
+    this.listService.updateList(this.list);
   }
 
   addNewTodo() {
     this.list.todos.push(new Todo('', true));
+    this.listService.updateList(this.list);
   }
 
   cancelTodo(todo: Todo) {
@@ -60,11 +62,13 @@ export class MainComponent implements OnInit {
       this.list.todos = this.list.todos.filter(t => t !== todo);
       this.list.todos.push(todo);
     }
+    this.listService.updateList(this.list);
   }
 
   deleteTodo(todo: Todo) {
     if (confirm('Are you sure you want to delete?')) {
       this.list.todos = this.list.todos.filter(t => t !== todo);
+      this.listService.updateList(this.list);
     }
   }
 

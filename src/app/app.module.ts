@@ -11,16 +11,18 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {FormsModule} from '@angular/forms';
 import {MatListModule} from '@angular/material/list';
 import {MatDividerModule} from '@angular/material/divider';
-import {MatCheckboxModule, MatSidenavModule} from '@angular/material';
+import {MatCheckboxModule, MatDialogModule, MatSidenavModule} from '@angular/material';
 import { MainComponent } from './main/main.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import {ListService} from './services/list.service';
+import { AddListDialogComponent } from './add-list-dialog/add-list-dialog.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MainComponent,
-    SidebarComponent
+    SidebarComponent,
+    AddListDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -35,10 +37,12 @@ import {ListService} from './services/list.service';
     MatListModule,
     MatDividerModule,
     MatCheckboxModule,
-    MatSidenavModule
+    MatSidenavModule,
+    MatDialogModule
   ],
   providers: [ListService],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [AddListDialogComponent]
 })
 export class AppModule {
 }
