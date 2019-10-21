@@ -3,10 +3,11 @@
 .title {
   width: 100%;
   text-align: center;
-  color: $main-blue;
-  font-family: fantasy;
+  color: white;
+  background: $secondary-blue;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
   margin: 0;
-  padding-top: 16px;
+  padding: 16px 0 16px 0;
 }
 
 .todos {
@@ -19,10 +20,12 @@
 }
 
 .list-container {
-  margin: 5% 0 0 0;
+  margin: 0;
   justify-content: center;
   display: flex;
   width: 100%;
+  height: 100vh;
+  background-color: lightgray;
 
   mat-card {
     padding: 0;
@@ -30,10 +33,18 @@
     width: 100%;
     min-width: 300px;
     max-width: 800px;
+    height: fit-content;
 
     mat-card-title {
       padding: 2.5%;
-      color: $main-blue;
+      color: white;
+      margin: 0;
+      background-color: $main-blue;
+
+      button {
+        background-color: $main-blue;
+        color: white;
+      }
     }
 
     mat-card-content {
@@ -76,11 +87,16 @@
 
 .addTaskInput {
   width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 0;
+  padding: 0;
+  height: fit-content;
+  align-items: center;
+  white-space: nowrap;
   mat-form-field {
-    width: 50%;
-  }
-  button {
-    margin: 3px;
+    max-width: 147px;
   }
 }
 
@@ -91,7 +107,7 @@
   justify-content: space-between;
   p {
     font-size: large;
-    margin: 0 0 0 32px;
+    margin: 0 0 0 16px;
   }
 }
 
@@ -102,18 +118,20 @@
 
 .buttons {
   float: right;
+  align-items: center;
 }
 
 .taskName {
   display: flex;
   flex-direction: row;
+  align-items: center;
 }
 
 .editButton {
   background: white;
   color: lightblue;
   :hover {
-    color: blue;
+    color: $secondary-blue;
   }
 }
 

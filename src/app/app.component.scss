@@ -1,126 +1,28 @@
-@import '../colors.scss';
-
-.title {
+.page {
   width: 100%;
-  text-align: center;
-  color: $main-blue;
-  font-family: fantasy;
+  padding: 0;
   margin: 0;
-  padding-top: 16px;
-}
-
-.todos {
-  margin-left: 5%;
-
-  p {
-    color: black;
-    font-size: x-large;
-  }
-}
-
-.list-container {
-  margin: 5% 0 0 0;
-  justify-content: center;
   display: flex;
-  width: 100%;
+  flex-direction: row;
 
-  mat-card {
-    padding: 0;
-    margin: 2%;
+  mat-sidenav-container {
     width: 100%;
-    min-width: 300px;
-    max-width: 800px;
 
-    mat-card-title {
-      padding: 2.5%;
-      color: $main-blue;
+    mat-sidenav {
+      width: 20%;
     }
 
-    mat-card-content {
-      display: flex;
-      flex-direction: column;
-      color: $main-blue;
-      justify-content: center;
-
-      mat-list {
-        padding: 0;
-        margin: 0;
-      }
+    mat-sidenav-content {
+      width: 100%;
     }
   }
 }
 
-.submit {
-  background: white;
-  color: lightgreen;
-  :hover {
-    color: green;
-  }
+.sidebar {
+  width: 20%;
+  min-width: 200px;
 }
 
-.cancel {
-  background: white;
-  color: pink;
-  :hover {
-    color: red;
-  }
-}
-
-.newTodoButton {
+.main {
   width: 100%;
-  margin: 0;
-  height: 48px;
-  background: $main-blue;
-  color: white;
-}
-
-.addTaskInput {
-  width: 100%;
-  mat-form-field {
-    width: 50%;
-  }
-  button {
-    margin: 3px;
-  }
-}
-
-.task {
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  p {
-    font-size: large;
-    margin: 0 0 0 32px;
-  }
-}
-
-.completedTask {
-  text-decoration: line-through;
-  color: gray;
-}
-
-.buttons {
-  float: right;
-}
-
-.taskName {
-  display: flex;
-  flex-direction: row;
-}
-
-.editButton {
-  background: white;
-  color: lightblue;
-  :hover {
-    color: blue;
-  }
-}
-
-.deleteButton {
-  background: white;
-  color: pink;
-  :hover {
-    color: red;
-  }
 }

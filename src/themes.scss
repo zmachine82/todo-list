@@ -1,0 +1,185 @@
+@import '~@angular/material/theming';
+@include mat-core();
+
+
+/* For use in src/lib/core/theming/_palette.scss */
+$md-mcgpalette0: (
+  50 : #e7e4f7,
+  100 : #c3bcec,
+  200 : #9c90df,
+  300 : #7463d2,
+  400 : #5641c8,
+  500 : #3820be,
+  600 : #321cb8,
+  700 : #2b18af,
+  800 : #2413a7,
+  900 : #170b99,
+  A100 : #cbc8ff,
+  A200 : #9b95ff,
+  A400 : #6b62ff,
+  A700 : #5348ff,
+  contrast: (
+    50 : #000000,
+    100 : #000000,
+    200 : #000000,
+    300 : #ffffff,
+    400 : #ffffff,
+    500 : #ffffff,
+    600 : #ffffff,
+    700 : #ffffff,
+    800 : #ffffff,
+    900 : #ffffff,
+    A100 : #000000,
+    A200 : #000000,
+    A400 : #ffffff,
+    A700 : #ffffff,
+  )
+);
+
+/* For use in src/lib/core/theming/_palette.scss */
+$md-lightblue: (
+  50 : #e4f2f7,
+  100 : #bcdeec,
+  200 : #90c8df,
+  300 : #63b2d2,
+  400 : #41a2c8,
+  500 : #2091be,
+  600 : #1c89b8,
+  700 : #187eaf,
+  800 : #1374a7,
+  900 : #0b6299,
+  A100 : #c8e7ff,
+  A200 : #95d1ff,
+  A400 : #62bbff,
+  A700 : #48b0ff,
+  contrast: (
+    50 : #000000,
+    100 : #000000,
+    200 : #000000,
+    300 : #000000,
+    400 : #000000,
+    500 : #ffffff,
+    600 : #ffffff,
+    700 : #ffffff,
+    800 : #ffffff,
+    900 : #ffffff,
+    A100 : #000000,
+    A200 : #000000,
+    A400 : #000000,
+    A700 : #000000,
+  )
+);
+
+
+/* For use in src/lib/core/theming/_palette.scss */
+$md-purple: (
+  50 : #f1e4f7,
+  100 : #dbbcec,
+  200 : #c390df,
+  300 : #ab63d2,
+  400 : #9941c8,
+  500 : #8720be,
+  600 : #7f1cb8,
+  700 : #7418af,
+  800 : #6a13a7,
+  900 : #570b99,
+  A100 : #e3c8ff,
+  A200 : #c995ff,
+  A400 : #af62ff,
+  A700 : #a248ff,
+  contrast: (
+    50 : #000000,
+    100 : #000000,
+    200 : #000000,
+    300 : #000000,
+    400 : #ffffff,
+    500 : #ffffff,
+    600 : #ffffff,
+    700 : #ffffff,
+    800 : #ffffff,
+    900 : #ffffff,
+    A100 : #000000,
+    A200 : #000000,
+    A400 : #000000,
+    A700 : #ffffff,
+  )
+);
+
+
+/* For use in src/lib/core/theming/_palette.scss */
+$md-yelow: (
+  50 : #f7efe4,
+  100 : #ecd8bc,
+  200 : #dfbe90,
+  300 : #d2a363,
+  400 : #c89041,
+  500 : #be7c20,
+  600 : #b8741c,
+  700 : #af6918,
+  800 : #a75f13,
+  900 : #994c0b,
+  A100 : #ffdec8,
+  A200 : #ffc095,
+  A400 : #ffa262,
+  A700 : #ff9348,
+  contrast: (
+    50 : #000000,
+    100 : #000000,
+    200 : #000000,
+    300 : #000000,
+    400 : #000000,
+    500 : #000000,
+    600 : #ffffff,
+    700 : #ffffff,
+    800 : #ffffff,
+    900 : #ffffff,
+    A100 : #000000,
+    A200 : #000000,
+    A400 : #000000,
+    A700 : #000000,
+  )
+);
+
+/* For use in src/lib/core/theming/_palette.scss */
+$md-deeppurple: (
+  50 : #eae8f4,
+  100 : #c9c5e4,
+  200 : #a69ed2,
+  300 : #8277c0,
+  400 : #675ab3,
+  500 : #4c3da5,
+  600 : #45379d,
+  700 : #3c2f93,
+  800 : #33278a,
+  900 : #241a79,
+  A100 : #b9b3ff,
+  A200 : #8b80ff,
+  A400 : #5c4dff,
+  A700 : #4533ff,
+  contrast: (
+    50 : #000000,
+    100 : #000000,
+    200 : #000000,
+    300 : #000000,
+    400 : #ffffff,
+    500 : #ffffff,
+    600 : #ffffff,
+    700 : #ffffff,
+    800 : #ffffff,
+    900 : #ffffff,
+    A100 : #000000,
+    A200 : #000000,
+    A400 : #ffffff,
+    A700 : #ffffff,
+  )
+);
+
+
+
+$my-custom-primary: mat-palette($md-mcgpalette0);
+$my-custom-accent: mat-palette($md-lightblue);
+$my-custom-warn: mat-palette($mat-lime);
+
+$my-custom-theme: mat-light-theme($my-custom-primary, $my-custom-accent, $my-custom-warn);
+
+@include angular-material-theme($my-custom-theme);

@@ -1,3 +1,11 @@
-<div class="page">
-  <app-main></app-main>
-</div>
+<mat-sidenav-container class="page">
+
+  <mat-sidenav [mode]="checkMode()" [opened]="menu" class="sidebar">
+    <app-sidebar (menu)="checkMenu()"></app-sidebar>
+  </mat-sidenav>
+
+  <mat-sidenav-content class="main">
+    <app-main (menu)="checkMenu()"></app-main>
+  </mat-sidenav-content>
+
+</mat-sidenav-container>

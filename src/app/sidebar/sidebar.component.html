@@ -1,0 +1,6 @@
+<div class="container">
+  <h2>Git Organized</h2>
+  <div class="lists-container" *ngFor="let list of lists" (click)="setActiveList(list)">
+    <h3 >{{list.name}}</h3>
+  </div>
+</div>

@@ -1,6 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import {List} from '../models/list';
 import {Todo} from '../models/todo';
+import {ListService} from '../services/list.service';
+import {ResponsiveService} from '../services/responsive.service';
 
 @Component({
   selector: 'app-main',
@@ -11,14 +13,29 @@ export class MainComponent implements OnInit {
 
   title = 'Git Organized';
   list: List;
+  isMobile = false;
 
-  constructor() {
+  @Output() menu: EventEmitter<any> = new EventEmitter<any>();
+
+  constructor(private listService: ListService, private responsiveService: ResponsiveService) {
   }
 
   ngOnInit(): void {
-    this.list = new List();
-    this.list.name = 'YARDWORK';
-    this.list.todos = [new Todo('Wow'), new Todo('Rake Leaves')];
+    this.onResize();
+    this.responsiveService.checkWidth();
+    this.listService.selectedList.subscribe(data => {
+      if (data !== null) {
+        this.list = data;
+      } else {
+        this.list = this.listService.getDefaultList();
+      }
+    });
+  }
+
+  onResize() {
+    this.responsiveService.getMobileStatus().subscribe(isMobile => {
+      this.isMobile = isMobile;
+    });
   }
 
   saveTodo(todo: Todo) {
@@ -49,6 +66,10 @@ export class MainComponent implements OnInit {
     if (confirm('Are you sure you want to delete?')) {
       this.list.todos = this.list.todos.filter(t => t !== todo);
     }
+  }
+
+  toggleMenu() {
+    this.menu.emit();
   }
 
 }
